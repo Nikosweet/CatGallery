@@ -1,0 +1,15 @@
+.catsSection {
+  width: 100%;
+  padding: 36px 62px 31px 62px;
+  .catsList {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 48px;
+    .cat {
+
+    }
+  }
+  .loading {
+    margin: 0 auto;
+  }
+}
