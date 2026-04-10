@@ -1,0 +1,1 @@
+export {LazyAbout as Cats} from './Cats.lazy'

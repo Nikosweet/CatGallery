@@ -1,0 +1,25 @@
+.header {
+  background-color: #2196F3;
+  padding-left: 62px;
+  .ul {
+    display: flex;
+    * {
+      cursor: pointer;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cats {
+      background-color: #1E88E5;
+      width: 120px
+
+    }
+    .lovely {
+      background-color: #2196F3;
+      width: 173px
+
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+.image_container {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  transition: width 0.3s ease, height 0.3s ease;
+
+  .cat {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heart {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 15px;
+    bottom: 19px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  &:hover {
+    width: 257px;
+    height: 256px;
+    .heart {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

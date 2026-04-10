@@ -1,0 +1,1 @@
+export {LazyAbout as Lovely} from './Lovely.lazy'
