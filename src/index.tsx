@@ -1,10 +1,11 @@
 import {createRoot} from 'react-dom/client'
 import App from './components/App'
+import { Children } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '@/states/store'
 import './index.css'
 import './fonts.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Children } from 'react';
-
 
 const root = document.getElementById('root')
 
@@ -25,5 +26,7 @@ const router = createBrowserRouter([
 ])
 
 container.render(
-    <RouterProvider router={router} />
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
 );

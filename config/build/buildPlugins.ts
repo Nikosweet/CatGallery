@@ -13,8 +13,10 @@ export function buildPlugins(html: string, platform: 'desktop' | 'mobile' = 'des
                 chunkFilename: 'css/[name].[contenthash:8].css',
             }),
             new DefinePlugin({
-                __PLATFORM__: JSON.stringify(platform)
+                __PLATFORM__: JSON.stringify(platform),
+                'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
+                'process.env.API_URL': JSON.stringify(process.env.API_URL)
             }), isDev ? new ForkTsCheckerWebpackPlugin() : undefined,
-            isDev ? new ReactRefreshWebpackPlugin() : undefined
+            isDev ? new ReactRefreshWebpackPlugin() : undefined,
         ]
 }
