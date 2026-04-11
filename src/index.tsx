@@ -12,7 +12,7 @@ import './index.css'
 import './fonts.css'
 
 import {Cats} from "@/pages/Cats";
-
+import {Lovely} from '@/pages/Lovely'
 
 const root = document.getElementById('root')
 
@@ -34,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: 'cats',
                 element: <Cats />
+            },
+            {
+                path: 'lovely',
+                element: <Lovely />
             }
         ]
     }

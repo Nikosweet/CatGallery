@@ -5,8 +5,8 @@ function Header(props: any) {
         <header className={classes.header}>
             <nav>
                 <ul className={classes.ul}>
-                    <li className={classes.cats}><a>Все котики</a></li>
-                    <li><a className={classes.lovely}>Любимые котики</a></li>
+                    <li><a className={classes.cats} href={'/cats'}>Все котики</a></li>
+                    <li><a className={classes.lovely} href={'/lovely'}>Любимые котики</a></li>
                 </ul>
             </nav>
         </header>
