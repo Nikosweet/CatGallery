@@ -5,11 +5,15 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 48px;
+    margin-bottom: 48px;
+
     .cat {
 
     }
   }
   .loading {
     margin: 0 auto;
+    text-align: center;
+    color: #000;
   }
 }
