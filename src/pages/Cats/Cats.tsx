@@ -62,7 +62,7 @@ export default function Cats() {
             const documentHeight = document.documentElement.scrollHeight;
             const windowHeight = document.documentElement.clientHeight;
 
-            if (documentHeight <= windowHeight && cats.length < 30) { // Ограничиваем максимум 30 котиков для начального заполнения
+            if (documentHeight <= windowHeight && cats.length < 30) {
                 loadCats();
             }
         };
