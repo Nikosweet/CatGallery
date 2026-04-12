@@ -56,7 +56,7 @@ export default function Cats() {
             <ul className={classes.catsList}>
                 {cats.map(cat => (
                     <li key={cat.id}>
-                        <CatCard url={cat.url} />
+                        <CatCard id={cat.id} url={cat.url} />
                     </li>
                 ))}
             </ul>
