@@ -15,7 +15,6 @@ export default function Lovely() {
     useEffect(() => {
         const updateLovelyCats = () => {
             const cats = JSON.parse(localStorage.getItem('likedCats') || '[]')
-            console.log('Updating lovely cats:', cats) // Для отладки
             setLovelyCats(cats)
         }
 
