@@ -8,6 +8,12 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   .heart_wrapper {
@@ -16,6 +22,9 @@
     height: 48px;
     right: 0;
     bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .heart {
@@ -27,15 +36,76 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     cursor: pointer;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 
     &.visible {
       opacity: 1;
+      pointer-events: auto;
     }
   }
 
   &:hover {
     .cat {
       transform: scale(1.14);
+    }
+
+    .heart_wrapper {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .heart_card_hover {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 178px;
+    height: 178px;
+
+    .heart_wrapper {
+      bottom: -10px;
+      right: -10px;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    .heart {
+      width: 80%;
+      height: 80%;
+    }
+
+    .heart_card_hover {
+      opacity: 1;
+    }
+
+    .heart.visible {
+      opacity: 1;
+
+      & ~ .heart_card_hover {
+        opacity: 0;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 128px;
+    height: 128px;
+
+    .heart_wrapper {
+      bottom: -15px;
+      right: -15px;
+    }
+
+    .heart {
+      width: 70%;
+      height: 70%;
     }
   }
 }

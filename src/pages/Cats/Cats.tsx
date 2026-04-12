@@ -60,8 +60,8 @@ export default function Cats() {
                     </li>
                 ))}
             </ul>
-            {isLoading && (<p className={classes.loading}>... Загружаем еще котиков ...</p>)}
-            {error && (<p className={classes.loading}>Упс, произошла ошибка!</p>)}
+            {isLoading && (<p className={classes.writing}>... Загружаем еще котиков ...</p>)}
+            {error && (<p className={classes.writing}>Упс, произошла ошибка!</p>)}
         </section>
     );
 }

@@ -1,9 +1,11 @@
 .header {
-  width: 1440px;
+  width: 100%;
   background-color: #2196F3;
   padding-left: 62px;
+
   .ul {
     display: flex;
+
     * {
       cursor: pointer;
       height: 64px;
@@ -11,15 +13,29 @@
       align-items: center;
       justify-content: center;
     }
+
     .cats {
-      background-color: #1E88E5;
+      background-color: #2196F3;
       width: 120px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+
+      &.active {
+        background-color: #1E88E5;
+        opacity: 1;
+      }
     }
+
     .lovely {
       background-color: #2196F3;
       width: 173px;
       opacity: 0.7;
-    }
+      transition: opacity 0.3s ease;
 
+      &.active {
+        background-color: #1E88E5;
+        opacity: 1;
+      }
+    }
   }
 }

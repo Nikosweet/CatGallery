@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import classes from './CatCard.module.scss'
 
 import HoveredCard from '@/assets/images/catCard/hoveredCard.png'
-import ClickedHeart from '@/assets/images/catCard/clickedHeart.png'
 import HoveredHeart from '@/assets/images/catCard/hoveredHeart.png'
+import ClickedHeart from '@/assets/images/catCard/clickedHeart.png'
 
 interface Props {
     id: string
@@ -15,8 +15,7 @@ interface LikedCat {
     url: string
 }
 
-function CatCard({ id, url }: Props) {
-    const [isCardHovered, setIsCardHovered] = useState(false)
+export default function CatCard({ id, url }: Props) {
     const [isHeartHovered, setIsHeartHovered] = useState(false)
     const [isLiked, setIsLiked] = useState(false)
 
@@ -37,57 +36,51 @@ function CatCard({ id, url }: Props) {
             localStorage.setItem('likedCats', JSON.stringify(updated))
             setIsLiked(true)
         }
+
+        window.dispatchEvent(new Event('likedCatsChanged'))
     }
 
-    const shouldShowHeart = isCardHovered || isHeartHovered
-
     const getActiveHeart = () => {
-        if (!shouldShowHeart) return null
-        if (isLiked && !isHeartHovered) return 'clicked'
+        if (isLiked) return 'clicked'
         if (isHeartHovered) return 'heartHovered'
         return 'cardHovered'
     }
-
     const activeHeart = getActiveHeart()
 
     return (
-        <figure
-            className={classes.image_container}
-            onMouseEnter={() => setIsCardHovered(true)}
-            onMouseLeave={() => setIsCardHovered(false)}
-        >
+        <figure className={classes.image_container}>
             <img
                 className={classes.cat}
                 alt={'Милый котик'}
                 src={url}
+                draggable={false}
             />
-            {shouldShowHeart && (
-                <div
-                    className={classes.heart_wrapper}
-                    onMouseEnter={() => setIsHeartHovered(true)}
-                    onMouseLeave={() => setIsHeartHovered(false)}
-                >
-                    <img
-                        className={`${classes.heart} ${activeHeart === 'cardHovered' ? classes.visible : ''}`}
-                        alt={'Кнопка лайка'}
-                        src={HoveredCard}
-                    />
-                    <img
-                        className={`${classes.heart} ${activeHeart === 'heartHovered' ? classes.visible : ''}`}
-                        alt={'Кнопка лайка'}
-                        src={HoveredHeart}
-                        onClick={handleLike}
-                    />
-                    <img
-                        className={`${classes.heart} ${activeHeart === 'clicked' ? classes.visible : ''}`}
-                        alt={'Кнопка лайка'}
-                        src={ClickedHeart}
-                        onClick={handleLike}
-                    />
-                </div>
-            )}
+            <div
+                className={classes.heart_wrapper}
+                onMouseEnter={() => setIsHeartHovered(true)}
+                onMouseLeave={() => setIsHeartHovered(false)}
+            >
+                <img
+                    className={`${classes.heart} ${classes.heart_card_hover}`}
+                    alt={'Кнопка лайка'}
+                    src={HoveredCard}
+                    draggable={false}
+                />
+                <img
+                    className={`${classes.heart} ${activeHeart === 'heartHovered' ? classes.visible : ''}`}
+                    alt={'Кнопка лайка'}
+                    src={HoveredHeart}
+                    onClick={handleLike}
+                    draggable={false}
+                />
+                <img
+                    className={`${classes.heart} ${activeHeart === 'clicked' ? classes.visible : ''}`}
+                    alt={'Кнопка лайка'}
+                    src={ClickedHeart}
+                    onClick={handleLike}
+                    draggable={false}
+                />
+            </div>
         </figure>
     )
 }
-
-export default CatCard
