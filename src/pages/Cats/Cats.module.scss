@@ -23,6 +23,18 @@
     text-align: center;
     color: #000;
   }
+
+  .retryButton {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #2196F3;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+  }
   @media (max-width: 2560px) {
     .catsList {
       grid-template-columns: repeat(6, 1fr);
