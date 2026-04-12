@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client'
 import App from './components/App'
 
 import { Children } from 'react';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { store } from '@/states/store'
@@ -22,7 +22,7 @@ if (!root) {
 
 const container = createRoot(root);
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <App />,
