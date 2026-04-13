@@ -42,9 +42,6 @@
   }
   @media (max-width: 1920px) {
     padding: 36px 62px 31px 62px;
-    .catsList {
-      grid-template-columns: repeat(6, 1fr);
-    }
   }
   @media (max-width: 1600px) {
     .catsList {
@@ -54,7 +51,6 @@
 
   @media(max-width: 1440px) {
     .catsList {
-      grid-template-columns: repeat(5, 1fr);
       gap: 48px;
     }
   }

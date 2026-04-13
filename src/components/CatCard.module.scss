@@ -77,7 +77,6 @@
     .heart_wrapper {
       bottom: -10px;
       right: -10px;
-      opacity: 1 !important;
       pointer-events: auto !important;
     }
 
@@ -85,19 +84,8 @@
       width: 80%;
       height: 80%;
     }
-
-    .heart_card_hover {
-      opacity: 1;
-    }
-
-    .heart.visible {
-      opacity: 1;
-
-      & ~ .heart_card_hover {
-        opacity: 0;
-      }
-    }
   }
+
 
   @media (max-width: 480px) {
     width: 128px;
